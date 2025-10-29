@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #080014 0%, #000 100%);
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(120, 0, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(120, 0, 255, 0.5);
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: float 6s infinite ease-in-out;
+}
+
+.bubble:hover {
+  transform: scale(1.2);
+  background: rgba(120, 0, 255, 0.4);
+  box-shadow: 0 0 20px rgba(160, 0, 255, 0.8);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#overlay-content {
+  background: rgba(20, 0, 60, 0.9);
+  border: 1px solid rgba(120, 0, 255, 0.5);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  width: 300px;
+  color: #fff;
+  box-shadow: 0 0 30px rgba(160, 0, 255, 0.7);
+  animation: fadeIn 0.4s ease;
+}
+
+#close-btn {
+  margin-top: 1rem;
+  background: rgba(160, 0, 255, 0.4);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+#close-btn:hover {
+  background: rgba(160, 0, 255, 0.6);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
